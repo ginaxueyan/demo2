@@ -1,0 +1,493 @@
+
+/**
+ * ----------------------------------------------------------------------------
+ * 版权所有: 快切css框架
+ * 网站地址: http://kuai.qietu.com/mobile/
+ * ----------------------------------------------------------------------------
+ * $codex 1. id和class命名采用该版块的英文单词或组合命名，并第一个单词小写，第二个单词首个字母大写，如:quickCss（最新产品/quick+Css)
+ * $codex 2. CSS样式表各区块用注释说明
+ * $codex 3. 尽量使用英文命名原则
+ * $codex 4. 尽量不加中杠和下划线
+ * $codex 5. 尽量不缩写，除非一看就明白的单词
+ * $Author: p2h 
+ * $mailto: <mobile@qietu.com>
+ * $hack :ie 6 _  \ ie7 *+ \  ie6,ie7 *  \  ie7,firefox !important ie9, \9
+*/
+body, select, input, textarea {
+    color: #323232;
+}
+ body{ color:#333;  background:#ECECEC;  background:#fff;  line-height:32px; font-size:18px;/*解决电脑设置保护色，网页空白处默认淡绿色问题*/}
+ * {font-family:'Microsoft YaHei UI','Microsoft YaHei',SimSun,'Segoe UI',Tahoma,Helvetica,Sans-Serif; }
+a{outline:none; text-decoration:none; color:#1570A6;} a:hover{ text-decoration:underline; color:#24459a;}
+html{zoom:1;}html *{outline:0;zoom:1;} html button::-moz-focus-inner{border-color:transparent!important;} 
+body{overflow-x: hidden;} 
+ /*fieldset,*/a img{border:0;} address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:normal;} 
+ li{list-style:none;}
+  caption,th{text-align:left;} h1,h2,h3,h4,h5,h6{/*font-size:100%;*/font-weight:normal;} 
+q:before,q:after{content:'';}
+
+hr{
+	border:none; clear:both; height:0; background:none; margin:0; padding:0; border-bottom:#eee solid 1px;  margin:10px 0;
+}
+img { border: 0 none; height: auto; max-width: 100%; vertical-align: middle; }
+
+blockquote { border-left: 5px solid #EEEEEE; margin: 10px; padding: 10px; }
+
+ul.unstyled, ol.unstyled{ list-style:none; }
+ul.circle{ list-style-type:circle; }
+ul.square{ list-style-type:square; }
+ul.cjk{ list-style-type:cjk-ideographic; }
+
+
+/*首字母*/
+.firstletter:first-letter{ font-size:200%;}
+/**
+ +------------------------------------------------------------------------------
+ * Public Class
+ +------------------------------------------------------------------------------
+ * @subpackage  RBAC
+ +------------------------------------------------------------------------------
+ */
+.clearfix:after {content:"."; display:block; height:0; clear:both; visibility:hidden; }.clearfix {display:block;}.clear{ clear:both;}/* 清除浮动*/
+.colwrapper { overflow:hidden; zoom:1 /*for ie*/; margin:5px auto; }/* 高度自适应 */ 
+.strong{ font-weight: bold;} .left{ float: left;} .right{ float: right;} .center{ margin:0 auto; text-align:center;}
+.show{ display:block; visibility:visible;}.hide{ display: none !important; /*visibility:hidden;*/}
+.block{ display:block;} .inline{ display:inline;}
+.transparent{filter:alpha(opacity=50); -moz-opacity:0.5;/** Firefox 3.5即将原生支持opacity属性，所以本条属性只在Firefox3以下版本有效 ***/ -khtml-opacity: 0.5; opacity: 0.5; } .break{ word-wrap:break-word;overflow:hidden; /*word-break:break-all;*/}
+
+small{color: #999999;
+    font-size: 80%;}
+.canvas { position: relative; }
+.relative { position: relative; }
+code, pre { border-radius: 3px 3px 3px 3px; color: #333333; font-family: Menlo,Monaco,"Courier New",monospace; font-size: 12px; padding: 0 3px 2px; }
+
+pre{ font-family:consolas,"Courier New",courier,monospace; /*color:#0088CC;*/ background-color: #F7F7F9; border: 1px solid #E1E1E8; border-radius: 4px 4px 4px 4px; display: block; font-size: 12.025px; line-height: 18px; margin: 0 0 9px; padding: 8.5px; white-space: pre-wrap; word-break: break-all; word-wrap: break-word;}
+
+code { background-color: #F7F7F9; border: 1px solid #E1E1E8; color: #0088CC; padding: 2px 4px; }
+pre ol{
+	margin: 0 0 0 14px;
+}
+pre.unstyled{
+	background:none; color:#333; border:none;
+}
+
+/*插入flash默认灰色*/
+object{ background:gray; display:block;}
+
+.pink{ color:#ff00ff;} .blue{ color:#0000ff;} .deepblue{ color:#000099;} .gray{ color:#999999;} .red{ color:#ff0000;} .black{ color:#000;} .white{ color:white;} .green{color:green;}
+
+.underline{ text-decoration:underline;} .dashedline{ border-bottom:dashed 1px #666;} ol.dashedline{ border:none; } ol.dashedline li{ border-bottom:dashed 1px #666; padding:5px; }
+
+
+/* 固定不动 */
+.fixed{
+	position:fixed; clip:rect(0 100% 100% 0); _position:absolute;
+	
+	/* 底部 */
+	bottom:0px; left:0px; _top:expression(document.documentElement.scrollTop+document.documentElement.clientHeight-this.clientHeight);
+	/*_left:expression(document.documentElement.scrollLeft + document.documentElement.clientWidth - offsetWidth);*/
+	
+	/* 左侧 */
+	/*left:0px;*/
+	/*_top:expression(document.documentElement.scrollTop+document.documentElement.clientHeight-this.clientHeight);*/
+	/*_left:expression(document.documentElement.scrollLeft + document.documentElement.clientWidth - offsetWidth);*/
+}
+.fixed.scrolltotop, .fixed.livechat{
+	 bottom:20px; right:20px; left:auto; background:#85c2f2; width:50px; height:50px; text-align:center; line-height:50px; font-size:50px; color:#fff; display:block; _display:none;
+}
+a:hover.fixed.scrolltotop, a:hover.fixed.livechat{
+	background:#2d96e9; text-decoration:none;
+}
+.fixed.livechat{
+	bottom:75px;
+}
+
+*html{ background-image:url(about:blank); background-attachment:fixed; /* 解决固定层在IE6下闪的问题 */}
+
+
+/* png透明 */
+.pngfix{filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='images/x.png');}
+
+/* 渐变 */
+.gradient{filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#dedede);
+    background: -moz-linear-gradient(top, #ffffff, #dedede);}
+	
+.radius
+{	
+-webkit-border-radius: 4px;   /*只支持webkit内核的浏览器*/
+border-radius: 4px;  /*只支持IE内核的浏览器（IE>=7)*/
+-moz-border-radius : 4px; /*只支持Mozilla内核的浏览器*/
+border:#ddd solid 1px;
+padding:4px;
+}
+
+.highlighted {
+    background: none repeat scroll 0 0 #00ADEE;
+    color: #FFFFFF;
+    padding: 0 5px;
+}
+
+/*超出省略号显示*/
+.ellipsis{
+	white-space:nowrap;/*设置不折行*/
+	text-overflow:ellipsis;/*这就是省略号喽*/
+	-o-text-overflow:ellipsis;/*兼容opera*/
+	width:80px;
+	overflow:hidden;
+}
+/*文字闪动*/
+.blink{
+	text-decoration:blink;
+}
+
+
+/* 解决ie下连接加粗的鼠标样式问题*/
+a strong{ cursor:pointer;}
+
+input[type=text],textarea{
+
+	padding:0.4em 0;
+	line-height:1.4;
+	font-size:16px;
+	display:block; 
+	display: inline-block;
+    width: 100%;
+	border:none;
+	}
+	label{
+		display: inline-block;
+    vertical-align: top;
+	margin:0 10px;
+  
+	}
+	
+	input[type=button],input[type=submit]{
+
+	background:#639c8f;
+    color: #fff;
+    font-weight: bold;
+   padding: 0.6em 0; 
+   width:100%;
+   font-size:24px;
+	}
+
+
+table { background-color: transparent; border-collapse: collapse; border-spacing: 0; max-width: 100%; font-size:13px; }
+table td.selected, table th.selected{ background:#DBEFF9; }
+.table {  margin-bottom: 20px; width: 100%; }
+.table th, .table td { border-top: 1px solid #DDDDDD; line-height: 20px; padding: 8px; text-align: left; vertical-align: top; }
+.table th { font-weight: bold; }
+.table thead th, .table thead td { vertical-align: bottom; background:#DBEFF9; }
+table.bordered { -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-right-colors: none; -moz-border-top-colors: none; border-collapse: separate; border-color: #DDDDDD #DDDDDD #DDDDDD -moz-use-text-color; border-image: none; border-radius: 4px 4px 4px 4px; border-style: none solid solid none; border-width: 1px 1px 1px 0; }
+table.bordered th, table.bordered td { border-left: 1px solid #DDDDDD; border-top: 1px solid #DDDDDD; }
+
+.bordered{ border: 1px solid #DDDDDD; border-radius: 4px 4px 4px 4px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055); padding:5px; }
+.bordered:hover{ border-color:#bbb; }
+
+
+
+body{ }
+*{ /*border-radius:2px;*/}
+.wrapper{
+	padding:15px;
+}
+.header, .footer{
+	
+	
+	font-weight:bold; text-align:center;
+	
+	width:100%;
+}
+.header {
+	background:#333;
+	color:#fff;
+	height:60px;
+	line-height:60px; 
+}
+.footer {
+	font-size:12px; font-weight:normal; margin-top:10px; background:#fefefe; line-height:1.5em; padding:20px 0;
+}
+
+.header{
+	position:relative;
+}
+.header .left,
+.header .right{
+	position:absolute; left:10px; top:0; height:100%;
+}
+.header .right{
+	left:auto; right:10px;
+}
+.header a{
+	background: #639c8f ;
+    border: 1px solid #000;
+    color: #FFFFFF;
+    font-weight: bold;
+   padding: 0.55em 11px 0.5em;
+	line-height:1;
+	display:inline-block;
+}
+.header h1{
+	margin:0; font-size:24px; font-weight:bold;
+}
+
+
+
+
+
+
+/*.list{
+	border-radius: 0.6em 0.6em 0.6em 0.6em;  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+.list li{
+background: linear-gradient(#FDFDFD, #EEEEEE) repeat scroll 0 0 #EEEEEE;
+ color: #333333;
+    text-shadow: 0 1px 0 #FFFFFF; border: 1px solid #B3B3B3; border-bottom:0; padding:0.5em 3em;
+}
+.list li:first-child{
+	border-top-left-radius: 0.6em;
+    border-top-right-radius: 0.6em;
+}
+.list li:last-child{
+	border:#B3B3B3 solid 1px;
+}*/
+
+
+
+
+/*20150130*/
+.layout{
+	/*background: none repeat scroll 0 0 #f3f3f3;
+    color: #666666;
+    font-size: 18px;
+    line-height: 32px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    width: 640px;*/
+}
+.aside.active{
+	left:0;
+}
+
+.aside {
+    background: none repeat scroll 0 0 #323436;
+    bottom: 0;
+    left: -260px;
+    position:fixed;
+    top: 0;
+    width: 260px;
+	overflow-y:scroll;
+	color:#fff;
+}
+
+.list li{
+	clear:both;	
+}
+.list li a{
+	border-bottom:1px solid #ccc;
+	font-weight:bold;
+	color:#444;
+	display:block; padding: 0.6em 20px; position: relative; margin-top:2px;
+    /*text-overflow: ellipsis;
+    white-space: nowrap;*/
+	
+	padding-right: 35px;
+  background: no-repeat -webkit-calc(100% - 15px) center;
+  background: no-repeat calc(100% - 15px) center;
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg viewBox='0 0 60 120' xmlns='http://www.w3.org/2000/svg'><path d='m60 61.5-38.25 38.25-9.75-9.75 29.25-28.5-29.25-28.5 9.75-9.75z' fill='%23c7c7cc'/></svg>");
+  background-size: 10px 20px;
+  
+  height:auto; overflow:hidden; clear:both;
+  
+  display: flex;
+
+
+}
+.list li.selected a{
+	background:#eee;
+	font-weight:bold;
+	cursor:pointer;
+	text-decoration:none;
+}
+.list-media h2{
+	margin:0; line-height:1.5em; font-size:22px;
+}
+.list-media p{
+	font-size:16px; font-weight:normal;
+}
+.list-media .img{
+	float:left; display:inline; width:80px;
+}
+.list-media .text{
+	float:left; display:inline; margin-left:10px;
+}
+.list-media .text h2{
+	height:30px;
+	display:block;
+	 overflow: hidden;
+    text-overflow: ellipsis;
+}
+.list-media .text p{
+
+	height:50px;
+	display:block;
+	 overflow: hidden;
+    text-overflow: ellipsis;
+	line-height:1.5em;
+}
+.list-form li{
+	margin-bottom:10px; padding:20px 0; border-bottom:#ccc solid 1px;
+}
+
+
+.aside .list{
+	background:#222;
+}
+.aside .list li a{
+	color:#fff;
+	border-bottom:1px solid #333;
+}
+.content{
+	padding:20px 20px 10px 20px;
+}
+.hero{
+	text-align:center; background:#639c8f; overflow:hidden; padding:30px 20px; color:#fff;
+}
+
+.hero h1{
+	line-height:1.2em; font-weight:bold;
+}
+
+
+
+.button-group{
+	display: flex;
+}
+.button{
+	
+    border: 1px solid #ccc;
+    font-weight: bold;
+    padding: 0.55em 11px 0.5em;
+	line-height:1em;
+	display:inline-block;
+}
+.button.active{
+	background:#ccc; color:#fff;
+}
+.button-group .button{
+	display:block; border-right:none;
+}
+.button-group .button:last-child{
+	border-right:#ccc solid 1px;
+}
+
+.tabs .tab{
+	display:none;
+}
+.tabs .tab.active{
+	display:block;
+}
+
+
+
+.dialog{
+	width:270px; position:absolute; left:50%; margin-left:-135px; top:60px; background:#fff; z-index:999;
+}
+.dialog-head{
+	line-height:1.5em; border-bottom:#ccc solid 1px; padding:10px 20px;
+}
+.dialog-body{
+	padding:20px;
+}
+.dialog-foot{
+	padding:10px 20px; border-top:#ccc solid 1px;
+}
+
+
+
+.slider{
+	position:relative;z-index:3; margin-left:0; background:#eee;height: 125px;
+}
+.slider li{
+	position:absolute; left:0; top:0; display:none;text-align:center; width:100%;
+}
+.slider li.selected{
+	display:block; z-index:2;
+}
+.slider .tip{
+	font-size:18px; color:#fff; z-index:7; position:absolute; left:0; bottom:0; width:100%; background:#666; height:40px; text-align:center; line-height:40px;
+}
+
+.slide-wrapper{overflow: hidden;}
+.slide-wrapper ul li img{width: 100%;height: 125px;}
+
+
+
+.contacts{
+	position:relative;
+}
+.contacts .list{
+}
+.contacts dl{
+	border-top:#ebebeb solid 1px; font-size:24px;
+}
+.contacts dt{
+	border-bottom:#ebebeb solid 1px; padding-left:35px; height:40px; line-height:40px; background:#eee;
+}
+.contacts dd{
+	
+}
+.contacts dd a{
+	display:block; width:100%; position:relative;
+	padding:10px; padding-left:100px;  border-bottom:#ebebeb solid 1px; height:80px; 
+}
+.contacts dd:last-child{
+	border-bottom:none;
+}
+.contacts dd .img{
+	position:absolute; left:10px; top:10px;
+}
+.contacts dd .text{}
+.contacts dd .text h4{
+	margin:0;
+}
+.contacts dd .text h5{
+	margin:0;
+}
+.contacts .abc{
+	position:absolute; top:20px; right:20px; font-size:20px; text-align:center; background:#fff;
+}
+.contacts .abc .selected a{
+	color:#333;
+}
+
+
+
+
+input[type=radio] {
+    display: none;
+}
+input[type=radio] + label {
+	background:#eee;
+	width:26px; height:26px;
+	border-radius:26px;
+    cursor: pointer;
+    display: inline-block;
+}
+input[type=radio]:checked + label {
+	background:#639c8f;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+input[type=checkbox] + label {
+	background:#eee;
+	width:26px; height:26px;
+    cursor: pointer;
+    display: inline-block;
+}
+input[type=checkbox]:checked + label {
+	background:#639c8f;
+}
